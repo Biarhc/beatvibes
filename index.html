@@ -1,298 +1,1025 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BeatVibes - Ouça músicas, crie playlists e compartilhe com seus amigos. A melhor experiência musical em um clique." />
-  <title>BeatVibes – Sua música, do seu jeito</title>
+  <meta name="description" content="BeatVibes – A experiência de streaming musical mais imersiva. Ouça, descubra e sinta a música de um jeito totalmente novo." />
+  <meta name="keywords" content="música, streaming, playlist, BeatVibes, descobrir músicas" />
+  <title>BeatVibes – Sinta Cada Batida</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 </head>
 <body>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <span class="logo-icon">🎵</span>
-      <span class="logo-text">BeatVibes</span>
+<!-- ══════════════════════════════════════ -->
+  <!--  NAVBAR                               -->
+  <!-- ══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#home" class="nav-logo" id="navLogo">
+        <img src="logo.svg" alt="BeatVibes Icon" class="nav-logo-img" />
+        <span class="logo-text">Beat<span class="logo-accent">Vibes</span></span>
+      </a>
+
+      <!-- Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#biblioteca" class="nav-link" data-section="biblioteca">Biblioteca</a></li>
+        <li><a href="#sobre" class="nav-link" data-section="sobre">Sobre</a></li>
+        <li><a href="#contato" class="nav-link" data-section="contato">Contato</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar entre modo escuro e claro">
+          <div class="toggle-track">
+            <span class="toggle-icon sun">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+            <span class="toggle-icon moon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+            <div class="toggle-thumb"></div>
+          </div>
+        </button>
+
+        <!-- CTA -->
+        <a href="app.html" class="btn-nav-cta" id="navCta">
+          <span>Começar Grátis</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
-    <nav class="sidebar-nav">
-      <button class="nav-btn active" id="btn-discover" onclick="showView('discover')">
-        <span class="nav-icon">🏠</span> Descobrir
-      </button>
-      <button class="nav-btn" id="btn-favorites" onclick="showView('favorites')">
-        <span class="nav-icon">❤️</span> Favoritas
-      </button>
-      <button class="nav-btn" id="btn-playlists" onclick="showView('playlists')">
-        <span class="nav-icon">📋</span> Playlists
-      </button>
-      <button class="nav-btn" id="btn-share" onclick="showView('share')">
-        <span class="nav-icon">🔗</span> Compartilhar
-      </button>
-      <button class="nav-btn" id="btn-lyrics" onclick="showView('lyrics')">
-        <span class="nav-icon">📝</span> Letra
-      </button>
-    </nav>
-
-    <div class="sidebar-footer">
-      <div class="user-avatar">B</div>
-      <div class="user-info">
-        <span class="user-name">Beatriz</span>
-        <span class="user-plan">🔥 Premium</span>
-      </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home" class="mobile-link">Home</a></li>
+        <li><a href="#biblioteca" class="mobile-link">Biblioteca</a></li>
+        <li><a href="#sobre" class="mobile-link">Sobre</a></li>
+        <li><a href="#contato" class="mobile-link">Contato</a></li>
+        <li><a href="app.html" class="mobile-link mobile-cta">Começar Grátis →</a></li>
+      </ul>
     </div>
-  </aside>
+  </nav>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <!-- ══════════════════════════════════════ -->
+  <!--  HERO SECTION                          -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Background Elements -->
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-noise"></div>
+    </div>
 
-    <!-- HEADER -->
-    <header class="top-bar">
-      <button class="hamburger" id="hamburger" onclick="toggleSidebar()">☰</button>
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="searchInput" placeholder="Buscar músicas, artistas..." oninput="filterSongs()" />
-      </div>
-      <div class="header-actions">
-        <button class="icon-btn" title="Notificações">🔔</button>
-      </div>
-    </header>
+    <!-- Floating Orbs Removed -->
 
-    <!-- VIEW: DESCOBRIR -->
-    <section class="view active" id="view-discover">
-      <div class="section-header">
-        <h1>Descobrir Músicas</h1>
-        <p class="section-subtitle">Curta as melhores faixas do momento 🎶</p>
-      </div>
 
-      <!-- FEATURED BANNER -->
-      <div class="featured-banner" id="featuredBanner">
-        <div class="featured-info">
-          <span class="featured-tag">EM DESTAQUE</span>
-          <h2 class="featured-title" id="featuredTitle">Dynamite</h2>
-          <p class="featured-artist" id="featuredArtist">BTS</p>
-          <div class="featured-actions">
-            <button class="btn-play-featured" onclick="playFeatured()">▶ Tocar Agora</button>
-            <button class="btn-fav-featured" id="featFavBtn" onclick="toggleFavFeatured()">❤️ Favoritar</button>
-          </div>
-        </div>
-        <div class="featured-art">
-          <div class="vinyl"></div>
-        </div>
-      </div>
+    <!-- Grid Lines -->
+    <div class="hero-grid"></div>
 
-      <!-- CATEGORIA TABS -->
-      <div class="cat-tabs">
-        <button class="cat-tab active" onclick="filterCategory('all', this)">Tudo</button>
-        <button class="cat-tab" onclick="filterCategory('pop', this)">Pop</button>
-        <button class="cat-tab" onclick="filterCategory('kpop', this)">K-Pop</button>
-        <button class="cat-tab" onclick="filterCategory('hiphop', this)">Hip-Hop</button>
-        <button class="cat-tab" onclick="filterCategory('rb', this)">R&amp;B</button>
-      </div>
+    <!-- Sound Wave Animation -->
+    <div class="soundwave-wrap" id="soundwave">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
 
-      <!-- SONG GRID -->
-      <div class="song-grid" id="songGrid"></div>
-    </section>
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-slider" id="heroSlider">
+        
+        <!-- Navigation Arrows -->
+        <button class="hero-nav prev" id="heroPrev" aria-label="Slide anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="hero-nav next" id="heroNext" aria-label="Próximo slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
 
-    <!-- VIEW: FAVORITAS -->
-    <section class="view" id="view-favorites">
-      <div class="section-header">
-        <h1>Minhas Favoritas</h1>
-        <p class="section-subtitle">Músicas que você amou ❤️</p>
-      </div>
-      <div class="song-list" id="favoritesList">
-        <div class="empty-state">
-          <span class="empty-icon">🎵</span>
-          <p>Você ainda não favoritou nenhuma música.</p>
-          <p>Clique no ❤️ em qualquer faixa para começar!</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW: PLAYLISTS -->
-    <section class="view" id="view-playlists">
-      <div class="section-header">
-        <h1>Minhas Playlists</h1>
-        <p class="section-subtitle">Organize suas músicas do jeito que quiser 📋</p>
-      </div>
-
-      <div class="playlist-creator">
-        <input type="text" id="playlistNameInput" class="playlist-name-input" placeholder="Nome da nova playlist..." maxlength="40" />
-        <button class="btn-create-playlist" onclick="createPlaylist()">+ Criar</button>
-      </div>
-
-      <div class="playlists-container" id="playlistsContainer">
-        <div class="empty-state">
-          <span class="empty-icon">📋</span>
-          <p>Nenhuma playlist criada ainda.</p>
-          <p>Crie sua primeira playlist acima!</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW: COMPARTILHAR -->
-    <section class="view" id="view-share">
-      <div class="section-header">
-        <h1>Compartilhar Músicas</h1>
-        <p class="section-subtitle">Mande suas músicas favoritas para os amigos 🔗</p>
-      </div>
-
-      <div class="share-grid">
-        <div class="share-card">
-          <div class="share-card-icon">📱</div>
-          <h3>Compartilhar Link</h3>
-          <p>Gere um link único para qualquer música e envie para seus amigos.</p>
-          <div class="share-song-select-wrap">
-            <select class="share-song-select" id="shareSongSelect">
-              <option value="">Selecione uma música...</option>
-            </select>
-          </div>
-          <div class="share-link-box" id="shareLinkBox" style="display:none;">
-            <input type="text" class="share-link-input" id="shareLinkInput" readonly />
-            <button class="btn-copy" onclick="copyLink()" id="copyBtn">📋 Copiar</button>
-          </div>
-          <button class="btn-generate-link" onclick="generateLink()">🔗 Gerar Link</button>
-        </div>
-
-        <div class="share-card">
-          <div class="share-card-icon">📤</div>
-          <h3>Compartilhar via WhatsApp</h3>
-          <p>Envie uma música diretamente no WhatsApp de um amigo.</p>
-          <div class="share-song-select-wrap">
-            <select class="share-song-select" id="shareWaSongSelect">
-              <option value="">Selecione uma música...</option>
-            </select>
-          </div>
-          <input type="tel" class="share-phone-input" id="sharePhoneInput" placeholder="DDD + Número (ex: 11999999999)" />
-          <button class="btn-share-wa" onclick="shareWhatsApp()">📲 Enviar no WhatsApp</button>
-        </div>
-
-        <div class="share-card">
-          <div class="share-card-icon">🎶</div>
-          <h3>Compartilhar Playlist</h3>
-          <p>Exporte uma das suas playlists e compartilhe com quem quiser.</p>
-          <div class="share-song-select-wrap">
-            <select class="share-song-select" id="sharePlaylistSelect">
-              <option value="">Selecione uma playlist...</option>
-            </select>
-          </div>
-          <button class="btn-share-playlist" onclick="sharePlaylist()">🔗 Gerar Link da Playlist</button>
-          <div class="share-link-box" id="playlistLinkBox" style="display:none;">
-            <input type="text" class="share-link-input" id="playlistLinkInput" readonly />
-            <button class="btn-copy" onclick="copyPlaylistLink()">📋 Copiar</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW: LETRA -->
-    <section class="view" id="view-lyrics">
-      <div class="section-header">
-        <h1>Letra da Música</h1>
-        <p class="section-subtitle">Acompanhe a letra em tempo real 📝</p>
-      </div>
-
-      <div class="lyrics-wrap">
-        <!-- Painel lateral: seletor -->
-        <div class="lyrics-sidebar">
-          <p class="lyrics-select-label">Escolha uma música:</p>
-          <div class="lyrics-song-list" id="lyricsSongList"></div>
-        </div>
-
-        <!-- Painel principal: letra -->
-        <div class="lyrics-main" id="lyricsMain">
-          <div class="lyrics-header" id="lyricsHeader">
-            <div class="lyrics-art" id="lyricsArt">🎵</div>
-            <div class="lyrics-info">
-              <span class="lyrics-song-title" id="lyricsSongTitle">Selecione uma música</span>
-              <span class="lyrics-song-artist" id="lyricsSongArtist">–</span>
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span>Mais de 80 milhões de faixas disponíveis</span>
             </div>
-            <button class="btn-lyrics-play" id="btnLyricsPlay" onclick="playFromLyrics()">▶ Tocar</button>
+            <h1 class="hero-title">
+              <span class="title-line">Sinta Cada</span>
+              <span class="title-line gradient-text">Batida</span>
+            </h1>
+            <p class="hero-subtitle">
+              Descubra, ouça e compartilhe músicas que movem sua alma.<br />
+              Uma experiência sonora sem igual, feita para você.
+            </p>
           </div>
-
-          <div class="lyrics-body" id="lyricsBody">
-            <div class="lyrics-idle">
-              <span class="lyrics-idle-icon">🎤</span>
-              <p>Selecione uma música ao lado para ver a letra</p>
-              <p style="font-size:12px;margin-top:6px;">ou toque uma música e ela aparecerá automaticamente aqui</p>
+          <div class="hero-media">
+            <div class="media-visual-wrap">
+              <div class="media-vinyl">
+                <div class="media-center"></div>
+              </div>
+              <div class="floating-note note-1">♪</div>
+              <div class="floating-note note-2">♫</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-  </main>
-
-  <!-- NOW PLAYING BAR -->
-  <div class="now-playing" id="nowPlaying">
-    <div class="np-left">
-      <div class="np-art" id="npArt">🎵</div>
-      <div class="np-info">
-        <span class="np-title" id="npTitle">Nenhuma música</span>
-        <span class="np-artist" id="npArtist">– selecione uma faixa</span>
-      </div>
-      <button class="np-fav-btn" id="npFavBtn" onclick="toggleFavFromPlayer()" title="Favoritar">❤️</button>
-    </div>
-
-    <div class="np-center">
-      <div class="np-controls">
-        <button class="ctrl-btn" onclick="prevSong()" title="Anterior">⏮</button>
-        <button class="ctrl-btn ctrl-play" id="playBtn" onclick="togglePlay()">▶</button>
-        <button class="ctrl-btn" onclick="nextSong()" title="Próxima">⏭</button>
-      </div>
-      <div class="np-progress-wrap">
-        <span class="np-time" id="currentTime">0:00</span>
-        <div class="np-progress-bar" id="progressBar" onclick="seekSong(event)">
-          <div class="np-progress-fill" id="progressFill"></div>
-          <div class="np-progress-thumb" id="progressThumb"></div>
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span>Qualidade de Áudio Lossless</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Som de Alta</span>
+              <span class="title-line gradient-text">Qualidade</span>
+            </h1>
+            <p class="hero-subtitle">
+              Sinta-se dentro do estúdio. Áudio sem perdas para<br />
+              ouvidos que exigem o melhor de cada nota musical.
+            </p>
+          </div>
+          <div class="hero-media">
+            <div class="media-visual-wrap">
+              <div class="media-aura">
+                <div class="aura-ring ring-1"></div>
+                <div class="aura-ring ring-2"></div>
+                <div class="aura-ring ring-3"></div>
+                <div class="aura-icon">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                </div>
+              </div>
+              <div class="floating-note note-1">♪</div>
+              <div class="floating-note note-2">♫</div>
+            </div>
+          </div>
         </div>
-        <span class="np-time" id="totalTime">0:00</span>
-      </div>
-    </div>
 
-    <div class="np-right">
-      <button class="ctrl-btn-sm" id="shuffleBtn" onclick="toggleShuffle()" title="Aleatório">🔀</button>
-      <button class="ctrl-btn-sm" id="repeatBtn" onclick="toggleRepeat()" title="Repetir">🔁</button>
-      <div class="volume-wrap">
-        <span class="vol-icon" id="volIcon">🔊</span>
-        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7" oninput="setVolume(this.value)" />
-      </div>
-      <button class="ctrl-btn-sm" onclick="addToPlaylistFromPlayer()" title="Adicionar à playlist">➕</button>
-      <button class="ctrl-btn-sm" onclick="openLyricsForCurrent()" title="Ver letra">📝</button>
-    </div>
-  </div>
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span>Inteligência Artificial Musical</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Sua Vibe, Seu</span>
+              <span class="title-line gradient-text">Ritmo</span>
+            </h1>
+            <p class="hero-subtitle">
+              Playlists inteligentes que aprendem com seu gosto.<br />
+              Sua trilha sonora pessoal, gerada em tempo real.
+            </p>
+          </div>
+          <div class="hero-media">
+            <div class="media-visual-wrap">
+              <div class="media-ai">
+                <svg class="ai-wave" viewBox="0 0 200 100" preserveAspectRatio="none">
+                  <path class="wave-path" d="M0 50 Q 50 10 100 50 T 200 50" stroke="url(#waveGrad)" stroke-width="2" fill="none" />
+                  <defs>
+                    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="var(--crimson)" stop-opacity="0" />
+                      <stop offset="50%" stop-color="var(--crimson)" stop-opacity="1" />
+                      <stop offset="100%" stop-color="var(--crimson)" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="ai-core"></div>
+              </div>
+              <div class="floating-note note-1">♪</div>
+              <div class="floating-note note-2">♫</div>
+            </div>
+          </div>
+        </div>
 
-  <!-- MODAL: ADICIONAR À PLAYLIST -->
-  <div class="modal-overlay" id="addToPlaylistModal" onclick="closeModal('addToPlaylistModal')">
-    <div class="modal" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <h3>Adicionar à Playlist</h3>
-        <button class="modal-close" onclick="closeModal('addToPlaylistModal')">✕</button>
+        <!-- Slide 4 -->
+        <div class="hero-slide">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span>Modo Offline & Multi-dispositivo</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Música Sem</span>
+              <span class="title-line gradient-text">Fronteiras</span>
+            </h1>
+            <p class="hero-subtitle">
+              Baixe suas batidas favoritas e ouça em qualquer lugar.<br />
+              Do smartphone ao computador, sem interrupções.
+            </p>
+          </div>
+          <div class="hero-media">
+            <div class="media-visual-wrap">
+              <div class="media-devices">
+                <div class="device phone"></div>
+                <div class="device laptop"></div>
+                <div class="device cloud-sync">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19L19 19C21.2091 19 23 17.2091 23 15C23 12.7909 21.2091 11 19 11L18.48 11C18.17 7.05 14.73 4 10.5 4C6.27107 4 2.82562 7.0536 2.51733 11.0022M2.51733 11.0022C0.978504 11.2335 0 12.9855 0 15C0 17.2091 1.79086 19 4 19L5.5 19"/><path d="M12 11V21M12 21L9 18M12 21L15 18"/></svg>
+                </div>
+              </div>
+              <div class="floating-note note-1">♪</div>
+              <div class="floating-note note-2">♫</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="modal-body" id="modalPlaylistList">
-        <div class="empty-state">
-          <p>Nenhuma playlist encontrada. Crie uma na aba Playlists!</p>
+
+      <!-- Actions -->
+      <div class="hero-actions-container">
+        <div class="hero-main-cta">
+          <a href="app.html" class="btn-primary btn-large">
+            <div class="btn-inner">
+              <span>Ouvir Agora</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 4l12 6-12 6V4z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="btn-shine"></div>
+          </a>
+          <a href="#biblioteca" class="btn-ghost" id="discoverMore">
+            <span>Descobrir Mais</span>
+          </a>
+        </div>
+
+        <!-- Indicators -->
+        <div class="hero-dots" id="heroDots">
+          <div class="h-dot active" data-index="0"></div>
+          <div class="h-dot" data-index="1"></div>
+          <div class="h-dot" data-index="2"></div>
+          <div class="h-dot" data-index="3"></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- MODAL: PLAYLIST DETALHES -->
-  <div class="modal-overlay" id="playlistDetailModal" onclick="closeModal('playlistDetailModal')">
-    <div class="modal modal-large" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <h3 id="playlistDetailTitle">Playlist</h3>
-        <button class="modal-close" onclick="closeModal('playlistDetailModal')">✕</button>
+    <!-- Scroll Indicator -->
+    <div class="scroll-hint" id="scrollHint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
       </div>
-      <div class="modal-body" id="playlistDetailBody"></div>
+      <span>Role para baixo</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  NOW PLAYING CARD (FLOATING)           -->
+  <!-- ══════════════════════════════════════ -->
+  <div class="floating-player" id="floatingPlayer" data-aos="fade-left">
+    <div class="fp-glow"></div>
+    <div class="fp-art">
+      <div class="fp-vinyl">
+        <div class="fp-center"></div>
+      </div>
+    </div>
+    <div class="fp-info">
+      <span class="fp-label">Tocando Agora</span>
+      <span class="fp-title">Blinding Lights</span>
+      <span class="fp-artist">The Weeknd</span>
+      <div class="fp-progress">
+        <div class="fp-bar"><div class="fp-fill"></div></div>
+        <span class="fp-time">2:31 / 3:20</span>
+      </div>
+    </div>
+    <div class="fp-controls">
+      <button class="fp-btn-sm" id="fpPrev" aria-label="Música Anterior">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+          <path d="M5 14V4h2v10H5zm10 0l-7-5 7-5v10z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="fp-btn" id="fpPlay" aria-label="Play/Pause">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="4" width="3" height="10" rx="1" fill="currentColor"/><rect x="11" y="4" width="3" height="10" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="fp-btn-sm" id="fpNext" aria-label="Próxima Música">
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+          <path d="M3 4l7 5-7 5V4zm10 0v10h-2V4h2z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="fp-btn-lyrics" id="fpLyrics" title="Letras">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </button>
+    </div>
+
+    <!-- Lyrics Panel -->
+    <div class="lyrics-panel" id="lyricsPanel">
+      <div class="lyrics-header">
+        <span style="font-weight: 700; font-size: 14px;">Letras Sincronizadas</span>
+        <button class="fp-btn-sm" onclick="toggleLyrics()" style="border:none; background:transparent;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="lyrics-content" id="lyricsContent">
+        <!-- Lines injected by JS -->
+      </div>
     </div>
   </div>
 
-  <!-- TOAST -->
+  <!-- ══════════════════════════════════════ -->
+  <!--  FEATURES SECTION                      -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">Recursos Premium</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Tudo que você precisa,<br /><span class="gradient-text">em um só lugar</span>
+      </h2>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="150">
+        Tecnologia de ponta para a melhor experiência musical do mercado.
+      </p>
+
+      <div class="features-grid">
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4zm-2 16V12l8 4-8 4z" fill="url(#f1)"/>
+              <defs><linearGradient id="f1" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Qualidade de Som Hi-Fi</h3>
+          <p>Áudio em 320kbps ou lossless para cada faixa. Ouça como o artista quis que fosse ouvido.</p>
+          <div class="feature-badge">Lossless</div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M28 12H20V4H12v8H4l12 12 12-12z" fill="url(#f2)"/>
+              <defs><linearGradient id="f2" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Playlists Inteligentes</h3>
+          <p>Nossa IA aprende com seus gostos e cria playlists perfeitas pra cada momento do seu dia.</p>
+          <div class="feature-badge">IA Personalizada</div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <circle cx="12" cy="12" r="6" stroke="url(#f3)" stroke-width="2"/>
+              <circle cx="24" cy="20" r="4" stroke="url(#f3)" stroke-width="2"/>
+              <path d="M17 14l4 4" stroke="url(#f3)" stroke-width="2" stroke-linecap="round"/>
+              <defs><linearGradient id="f3" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Compartilhamento Social</h3>
+          <p>Envie músicas para amigos via WhatsApp, link ou redes sociais com um clique.</p>
+          <div class="feature-badge">Instantâneo</div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 4l2.4 7.2H26l-6.2 4.5 2.4 7.2L16 18.4l-6.2 4.5 2.4-7.2L6 11.2h7.6L16 4z" fill="url(#f4)"/>
+              <defs><linearGradient id="f4" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Letra Sincronizada</h3>
+          <p>Acompanhe cada verso em tempo real. Karaokê mode incluído.</p>
+          <div class="feature-badge">Tempo Real</div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M8 24V14l8-6 8 6v10H20v-6h-8v6H8z" fill="url(#f5)"/>
+              <defs><linearGradient id="f5" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Offline Mode</h3>
+          <p>Baixe suas músicas e ouça mesmo sem internet. Perfeito para qualquer lugar.</p>
+          <div class="feature-badge">Download</div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M14 6a2 2 0 100 4 2 2 0 000-4zM6 14a2 2 0 100 4 2 2 0 000-4zM22 14a2 2 0 100 4 2 2 0 000-4zM14 22a2 2 0 100 4 2 2 0 000-4z" fill="url(#f6)"/>
+              <defs><linearGradient id="f6" x1="4" y1="4" x2="28" y2="28"><stop stop-color="#FF2B55"/><stop offset="1" stop-color="#DC143C"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3>Multi-Dispositivo</h3>
+          <p>Sincronize seu histórico e playlists em todos os seus dispositivos automaticamente.</p>
+          <div class="feature-badge">Sincronizado</div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  BIBLIOTECA / TRENDING                 -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="biblioteca" id="biblioteca">
+    <div class="container">
+      <div class="lib-header" data-aos="fade-up">
+        <div class="lib-title-wrap">
+          <div class="section-tag">Sua Música</div>
+          <h2 class="section-title">
+            Explore sua<br /><span class="gradient-text">vibe musical</span>
+          </h2>
+        </div>
+        
+        <div class="lib-tabs">
+          <button class="lib-tab-btn active" data-target="pane-trending">Descobrir</button>
+          <button class="lib-tab-btn" data-target="pane-mine">Minha Biblioteca</button>
+        </div>
+      </div>
+
+      <!-- Content Panes -->
+      <div class="lib-panes">
+        
+        <!-- Pane 1: Trending -->
+        <div class="lib-content-pane active" id="pane-trending">
+          <div class="genre-filters" data-aos="fade-up" data-aos-delay="150">
+            <button class="genre-btn active" data-genre="all" id="btnAll">Tudo</button>
+            <button class="genre-btn" data-genre="pop" id="btnPop">Pop</button>
+            <button class="genre-btn" data-genre="hiphop" id="btnHiphop">Hip-Hop</button>
+            <button class="genre-btn" data-genre="kpop" id="btnKpop">K-Pop</button>
+            <button class="genre-btn" data-genre="rb" id="btnRb">R&B</button>
+            <button class="genre-btn" data-genre="electronic" id="btnElectronic">Electronic</button>
+          </div>
+
+          <div class="tracks-grid" id="tracksGrid">
+            <!-- Dynamic content from app.js -->
+          </div>
+
+          <div class="lib-cta" data-aos="fade-up">
+            <a href="app.html" class="btn-primary magnetic" id="libCta">
+              <span class="btn-inner">Ver Catálogo Completo →</span>
+              <div class="btn-shine"></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pane 2: My Library -->
+        <div class="lib-content-pane" id="pane-mine">
+          <div class="lib-section-title">
+            <span>Minhas Playlists</span>
+          </div>
+          <div class="my-lib-grid">
+            <button class="btn-create-playlist" id="btnCreatePlaylist">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Criar Nova Playlist</span>
+            </button>
+            <div id="userPlaylists" style="display: contents;">
+              <!-- Playlist cards seriam inseridos aqui -->
+            </div>
+          </div>
+
+          <div class="lib-section-title" style="justify-content: space-between;">
+            <span>Músicas Curtidas</span>
+            <div class="offline-toggle" id="offlineAllToggle">
+              <span style="font-size: 12px; font-weight: 500; color: var(--txt-2);">Modo Offline</span>
+              <div class="toggle-switch"></div>
+            </div>
+          </div>
+          <div class="tracks-grid" id="likedTracksGrid">
+            <p id="noLikedMsg" style="grid-column: 1/-1; text-align: center; color: var(--txt-3); padding: 40px;">Você ainda não curtiu nenhuma música.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  SOBRE / ABOUT                         -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+
+        <!-- Left: Visual Highlight -->
+        <div class="sobre-visual" data-aos="fade-right">
+          <div class="daily-mix-highlight">
+            <div class="dm-glow"></div>
+            <div class="dm-header">
+              <span class="dm-badge">SEU MIX DIÁRIO</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            
+            <div class="dm-content">
+              <div class="dm-art">
+                <div class="dm-art-icon">𝄞</div>
+                <div class="dm-playing-indicator">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="dm-info">
+                <h3>Daily Mix 1</h3>
+                <p>Uma curadoria feita especialmente para o seu momento atual.</p>
+                <div class="dm-visualizer">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dm-stats">
+              <div class="dm-stat-item">
+                <span>38</span>
+                <small>Músicas</small>
+              </div>
+              <div class="dm-stat-item">
+                <span>2h 15m</span>
+                <small>Duração</small>
+              </div>
+              <div class="dm-stat-item">
+                <span>Lossless</span>
+                <small>Qualidade</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Brand Philosophy -->
+        <div class="sobre-content" data-aos="fade-left">
+          <div class="section-tag">Nossa Essência</div>
+          <h2 class="section-title">
+            Música é mais que<br /><span class="gradient-text">entretenimento</span>
+          </h2>
+          <p class="sobre-text">
+            No BeatVibes, acreditamos que cada batida conta uma história. Nossa missão é criar o ambiente perfeito para que você possa se perder nos seus ritmos favoritos e encontrar sua próxima paixão musical.
+          </p>
+          
+          <div class="sobre-features">
+            <div class="sf-item">
+              <div class="sf-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <strong>Curadoria Personalizada</strong>
+                <p>Nossa IA entende seu humor e sugere o que você precisa ouvir.</p>
+              </div>
+            </div>
+            <div class="sf-item">
+              <div class="sf-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11l5 5z"/></svg>
+              </div>
+              <div>
+                <strong>Comunidade Vibrante</strong>
+                <p>Compartilhe suas descobertas com uma rede de apaixonados por som.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sobre-cta" style="margin-top: 40px;">
+            <a href="app.html" class="btn-primary" id="sobreBtn">Descobrir o BeatVibes</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  ÁLBUNS / ALBUMS                       -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="albums" id="albums" style="padding: 100px 0; background: var(--bg-2); border-top: 1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">Destaques</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Álbuns que você<br /><span class="gradient-text">precisa ouvir</span>
+      </h2>
+
+      <div class="albums-grid" id="albumsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; margin-top: 50px;">
+        <!-- Dynamic content from app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  PLANOS / PRICING                      -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="planos" id="planos">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">Planos</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Escolha o plano<br /><span class="gradient-text">ideal para você</span>
+      </h2>
+
+      <div class="planos-grid">
+
+        <!-- Free -->
+        <div class="plano-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="plano-header">
+            <span class="plano-icon"></span>
+            <h3 class="plano-name">Free</h3>
+            <div class="plano-price">
+              <span class="price-val">R$0</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plano-features">
+            <li class="feat-yes">80M+ músicas</li>
+            <li class="feat-yes">Qualidade padrão</li>
+            <li class="feat-yes">Playlists ilimitadas</li>
+            <li class="feat-no">Sem anúncios</li>
+            <li class="feat-no">Modo offline</li>
+            <li class="feat-no">Qualidade Hi-Fi</li>
+          </ul>
+          <a href="app.html" class="plano-btn plano-btn--ghost" id="planFreeBtn">Começar Grátis</a>
+        </div>
+
+        <!-- Premium (Destaque) -->
+        <div class="plano-card plano-card--featured" data-aos="fade-up" data-aos-delay="150">
+          <div class="plano-glow"></div>
+          <div class="plano-badge-popular">Mais Popular</div>
+          <div class="plano-header">
+            <span class="plano-icon"></span>
+            <h3 class="plano-name">Premium</h3>
+            <div class="plano-price">
+              <span class="price-val">R$19</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plano-features">
+            <li class="feat-yes">80M+ músicas</li>
+            <li class="feat-yes">Qualidade Hi-Fi 320kbps</li>
+            <li class="feat-yes">Playlists ilimitadas</li>
+            <li class="feat-yes">Sem anúncios</li>
+            <li class="feat-yes">Modo offline</li>
+            <li class="feat-yes">Letra sincronizada</li>
+          </ul>
+          <a href="app.html" class="plano-btn plano-btn--primary" id="planPremiumBtn">Assinar Premium</a>
+        </div>
+
+        <!-- Família -->
+        <div class="plano-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="plano-header">
+            <span class="plano-icon"></span>
+            <h3 class="plano-name">Família</h3>
+            <div class="plano-price">
+              <span class="price-val">R$29</span>
+              <span class="price-period">/mês</span>
+            </div>
+          </div>
+          <ul class="plano-features">
+            <li class="feat-yes">Tudo do Premium</li>
+            <li class="feat-yes">Até 6 usuários</li>
+            <li class="feat-yes">Perfis individuais</li>
+            <li class="feat-yes">Controles parentais</li>
+            <li class="feat-yes">Downloads simultâneos</li>
+            <li class="feat-yes">Suporte prioritário</li>
+          </ul>
+          <a href="app.html" class="plano-btn plano-btn--ghost" id="planFamilyBtn">Assinar Família</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  DEPOIMENTOS                           -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">O que dizem nossos usuários</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Milhões de fãs,<br /><span class="gradient-text">uma só vibe</span>
+      </h2>
+
+      <div class="dep-track-wrap" data-aos="fade-up" data-aos-delay="150">
+        <div class="dep-track" id="depTrack">
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"O BeatVibes mudou completamente como eu ouço música. A qualidade de áudio é simplesmente incrível. Nunca mais voltei pra nenhum outro app."</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#DC143C,#7B0020)">A</div>
+                <div>
+                  <strong>Ana Clara</strong>
+                  <span>São Paulo, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"As playlists automáticas são perfeitas! Parece que o app me conhece melhor do que eu mesmo. Recomendo demais!"</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#1a3060,#0a1530)">M</div>
+                <div>
+                  <strong>Marcos Lima</strong>
+                  <span>Rio de Janeiro, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"A interface é linda e super intuitiva. O modo offline funciona perfeitamente, o que é essencial para as minhas viagens."</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#5c0030,#1a0010)">L</div>
+                <div>
+                  <strong>Lucas Soares</strong>
+                  <span>Belo Horizonte, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"O suporte deles é nota 10. Tive um problema com minha conta e resolveram em minutos. Recomendo o plano Família!"</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#7b0020,#dc143c)">R</div>
+                <div>
+                  <strong>Ricardo Maia</strong>
+                  <span>Porto Alegre, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"Uso no meu estúdio para referências. A qualidade lossless é real e faz muita diferença em monitores profissionais."</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#300050,#0a001a)">F</div>
+                <div>
+                  <strong>Felipe Souza</strong>
+                  <span>Salvador, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"As letras sincronizadas são ótimas para treinar novos idiomas. O app é leve e raramente trava."</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#004030,#001810)">P</div>
+                <div>
+                  <strong>Patrícia Reis<strong
+                  <span>Fortaleza, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dep-card">
+            <div class="dep-card-inner">
+              <div class="dep-stars">★★★★★</div>
+              <p class="dep-text">"Nunca pensei que abandonaria outros players, mas o BeatVibes ganhou meu coração com a interface dark mode."</p>
+              <div class="dep-user">
+                <div class="dep-avatar" style="background: linear-gradient(135deg,#503000,#1a0a00)">B</div>
+                <div>
+                  <strong>Beatriz Nunes</strong>
+                  <span>Manaus, Brasil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="dep-controls" data-aos="fade-up">
+        <button class="dep-arrow" id="depPrev" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="dep-dots" id="depDots">
+          <button class="dep-dot active" data-idx="0" aria-label="Depoimento 1"></button>
+          <button class="dep-dot" data-idx="1" aria-label="Depoimento 2"></button>
+          <button class="dep-dot" data-idx="2" aria-label="Depoimento 3"></button>
+          <button class="dep-dot" data-idx="3" aria-label="Depoimento 4"></button>
+          <button class="dep-dot" data-idx="4" aria-label="Depoimento 5"></button>
+        
+        </div> 
+        <button class="dep-arrow" id="depNext" aria-label="Próximo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  CTA SECTION                           -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+        <div class="cta-icon"></div>
+        <h2 class="cta-title">Pronto para sentir<br /><span class="gradient-text">cada batida?</span></h2>
+        <p class="cta-sub">Junte-se a milhões de ouvintes. Comece grátis hoje mesmo.</p>
+        <div class="cta-actions">
+          <a href="app.html" class="btn-primary btn-large magnetic" id="ctaMainBtn">
+            <span class="btn-inner">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7l5 3-5 3V7z" fill="currentColor"/>
+              </svg>
+              Começar Agora — É Grátis
+            </span>
+            <div class="btn-shine"></div>
+          </a>
+          <span class="cta-note">Sem cartão de crédito · Cancele quando quiser</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  CONTATO                               -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="contato-grid">
+
+        <!-- Info -->
+        <div class="contato-info" data-aos="fade-right">
+          <div class="section-tag">Contato</div>
+          <h2 class="section-title">Fale com a<br /><span class="gradient-text">nossa equipe</span></h2>
+          <p class="contato-sub">Dúvidas, sugestões ou parcerias? Estamos ouvindo — afinal, é o que fazemos de melhor.</p>
+
+          <div class="contato-channels">
+            <a href="mailto:hello@beatvibes.app" class="channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>hello@beatvibes.app</span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" onclick="showToast('Iniciando chat ao vivo...')" class="channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <strong>Chat ao vivo</strong>
+                <span>Disponível 24h / 7 dias</span>
+              </div>
+            </a>
+            <a href="https://wa.me/5511960126094" target="_blank" class="channel-item">
+              <div class="channel-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>+55 (11) 96012-6094</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contato-form-wrap" data-aos="fade-left">
+          <form class="contato-form" id="contatoForm" novalidate>
+            <div class="form-group">
+              <label for="ctName">Nome</label>
+              <input type="text" id="ctName" name="name" placeholder="Seu nome completo" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="ctEmail">Email</label>
+              <input type="email" id="ctEmail" name="email" placeholder="seu@email.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="ctMsg">Mensagem</label>
+              <textarea id="ctMsg" name="message" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full magnetic" id="ctSubmitBtn">
+              <span class="btn-inner">Enviar Mensagem →</span>
+              <div class="btn-shine"></div>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--  FOOTER                                -->
+  <!-- ══════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo">
+            <img src="logo.svg" alt="BeatVibes" class="nav-logo-img" />
+            <span class="logo-text">Beat<span class="logo-accent">Vibes</span></span>
+          </a>
+          <p>A experiência musical mais imersiva do Brasil. Ouça, descubra e sinta cada batida.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-col">
+          <h4>Produto</h4>
+          <ul>
+            <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#planos">Preços</a></li>
+            <li><a href="#biblioteca">Biblioteca</a></li>
+            <li><a href="app.html">App Web</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Carreiras</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Licenças</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 BeatVibes. Todos os direitos reservados. Feito no Brasil.</p>
+        <p class="footer-tagline">Ouça. Sinta. <span class="gradient-text">Vibre.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
   <div class="toast" id="toast"></div>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 15V5M5 10l5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container" id="modalContainer">
+      <button class="modal-close" id="modalClose">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="modalContent">
+        <!-- Content dynamic -->
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

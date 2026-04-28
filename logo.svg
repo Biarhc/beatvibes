@@ -1,0 +1,42 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Radial gradient for the vinyl center -->
+    <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#c96478" />
+      <stop offset="100%" stop-color="#b84058" />
+    </radialGradient>
+    
+    <!-- Conic gradient simulation for the vinyl surface -->
+    <linearGradient id="vinylShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0010" />
+      <stop offset="25%" stop-color="#3D0020" />
+      <stop offset="50%" stop-color="#1A0010" />
+      <stop offset="75%" stop-color="#5C0030" />
+      <stop offset="100%" stop-color="#1A0010" />
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="vinylGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Main Vinyl Base -->
+  <circle cx="50" cy="50" r="48" fill="#0A0008" stroke="#1A0010" stroke-width="1" />
+  
+  <!-- Shiny Conic Effect (Simulated with paths) -->
+  <circle cx="50" cy="50" r="46" fill="url(#vinylShine)" opacity="0.8" />
+  
+  <!-- Grooves (Concentric Circles) -->
+  <circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.5" opacity="0.07" />
+  <circle cx="50" cy="50" r="34" stroke="white" stroke-width="0.5" opacity="0.07" />
+  <circle cx="50" cy="50" r="28" stroke="white" stroke-width="0.5" opacity="0.07" />
+  
+  <!-- Center Label -->
+  <circle cx="50" cy="50" r="16" fill="url(#centerGrad)" filter="url(#vinylGlow)" />
+  
+  <!-- The Hole -->
+  <circle cx="50" cy="50" r="2.5" fill="#080810" />
+</svg>
