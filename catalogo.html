@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BeatVibes Catálogo – Explore todas as músicas disponíveis." />
+  <title>BeatVibes – Catálogo Completo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+</head>
+<body class="catalog-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.svg" alt="BeatVibes Icon" class="nav-logo-img" />
+        <span class="logo-text">Beat<span class="logo-accent">Vibes</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#biblioteca" class="nav-link">Biblioteca</a></li>
+        <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-cta">Começar Grátis</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top: 120px; padding-bottom: 80px;">
+    <div class="section-tag">Explore Tudo</div>
+    <h1 class="section-title">Nosso Catálogo <br><span class="gradient-text">Completo</span></h1>
+    <p class="section-desc" style="margin-bottom: 50px;">Todas as faixas disponíveis no BeatVibes, incluindo álbuns e lançamentos exclusivos.</p>
+
+    <div class="tracks-grid" id="fullTracksGrid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+      <!-- Injected by app.js -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 BeatVibes. Todos os direitos reservados. Feito no Brasil.</p>
+        <p class="footer-tagline">Ouça. Sinta. <span class="gradient-text">Vibre.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Player -->
+  <div class="floating-player" id="floatingPlayer">
+    <div class="fp-art"><div class="fp-vinyl"><div class="fp-center"></div></div></div>
+    <div class="fp-info">
+      <span class="fp-title">Escolha uma música</span>
+      <span class="fp-artist">BeatVibes</span>
+    </div>
+    <div class="fp-controls">
+      <button class="fp-btn" id="fpPlay"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4l9 5-9 5V4z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

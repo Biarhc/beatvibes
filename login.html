@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeatVibes – Entre ou Crie sua Conta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      padding: 24px;
+    }
+    .auth-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    .auth-logo { margin-bottom: 32px; display: inline-flex; }
+    .auth-title { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+    .auth-sub { color: var(--txt-2); margin-bottom: 32px; font-size: 15px; }
+    .auth-tabs {
+      display: flex;
+      background: var(--bg-2);
+      padding: 4px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: transparent;
+      color: var(--txt-2);
+      font-weight: 700;
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    .auth-tab.active {
+      background: var(--grad-crimson);
+      color: white;
+      box-shadow: 0 4px 12px var(--crimson-glow);
+    }
+    .auth-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+    .auth-input-group label { display: block; font-size: 13px; font-weight: 600; color: var(--txt-2); margin-bottom: 8px; }
+    .auth-input-group input {
+      width: 100%;
+      background: var(--bg-2);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--txt);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .auth-input-group input:focus { border-color: var(--crimson); }
+    .btn-auth {
+      margin-top: 10px;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: var(--grad-crimson);
+      color: white;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px var(--crimson-glow);
+      transition: transform 0.3s;
+    }
+    .btn-auth:hover { transform: translateY(-2px); }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <a href="index.html" class="nav-logo auth-logo">
+      <img src="logo.svg" alt="BeatVibes Icon" class="nav-logo-img" />
+      <span class="logo-text">Beat<span class="logo-accent">Vibes</span></span>
+    </a>
+    
+    <div id="loginView">
+      <h1 class="auth-title">Bem-vindo de volta</h1>
+      <p class="auth-sub">Entre para continuar sua jornada musical.</p>
+      
+      <div class="auth-tabs">
+        <button class="auth-tab active">Entrar</button>
+        <button class="auth-tab" onclick="toggleAuth()">Cadastrar</button>
+      </div>
+
+      <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='index.html'">
+        <div class="auth-input-group">
+          <label>Email</label>
+          <input type="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="auth-input-group">
+          <label>Senha</label>
+          <input type="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-auth">Entrar no BeatVibes</button>
+      </form>
+    </div>
+
+    <div id="signupView" style="display: none;">
+      <h1 class="auth-title">Crie sua conta</h1>
+      <p class="auth-sub">Junte-se à maior comunidade de música.</p>
+      
+      <div class="auth-tabs">
+        <button class="auth-tab" onclick="toggleAuth()">Entrar</button>
+        <button class="auth-tab active">Cadastrar</button>
+      </div>
+
+      <form class="auth-form" onsubmit="event.preventDefault(); window.location.href='index.html'">
+        <div class="auth-input-group">
+          <label>Nome Completo</label>
+          <input type="text" placeholder="Como quer ser chamado?" required>
+        </div>
+        <div class="auth-input-group">
+          <label>Email</label>
+          <input type="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="auth-input-group">
+          <label>Senha</label>
+          <input type="password" placeholder="Mínimo 8 caracteres" required>
+        </div>
+        <button type="submit" class="btn-auth">Começar Agora</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleAuth() {
+      const login = document.getElementById('loginView');
+      const signup = document.getElementById('signupView');
+      if (login.style.display === 'none') {
+        login.style.display = 'block';
+        signup.style.display = 'none';
+      } else {
+        login.style.display = 'none';
+        signup.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

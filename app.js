@@ -8,26 +8,26 @@
 
 // ── DATA ───────────────────────────────────────────
 const SONGS_DATA = [
-  { id: 'as-it-was', title: 'As It Was', artist: 'Harry Styles', genre: 'pop', duration: '2:47', plays: '2.5B', art: 'https://i.scdn.co/image/ab67616d0000b273b42903524b8159a6747ef161' },
-  { id: 'blinding-lights', title: 'Blinding Lights', artist: 'The Weeknd', genre: 'pop', duration: '3:20', plays: '3.2B', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb' },
-  { id: 'unholy', title: 'Unholy', artist: 'Sam Smith & Kim Petras', genre: 'pop', duration: '2:36', plays: '1.4B', art: 'linear-gradient(135deg, #1a0030, #4a0070)' },
-  { id: 'dynamite', title: 'Dynamite', artist: 'BTS', genre: 'kpop', duration: '3:19', plays: '1.7B', art: 'linear-gradient(135deg, #001a30, #004080)' },
-  { id: 'god-did', title: 'God Did', artist: 'DJ Khaled ft. Drake', genre: 'hiphop', duration: '5:07', plays: '1.8B', art: 'linear-gradient(135deg, #0a1530, #1a3060)' },
-  { id: 'golden-hour', title: 'Golden Hour', artist: 'JVKE', genre: 'rb', duration: '3:29', plays: '980M', art: 'linear-gradient(135deg, #001810, #004030)' },
+  { id: 'as-it-was', title: 'As It Was', artist: 'Harry Styles', genre: 'pop', duration: '2:47', plays: '2.5B', art: 'https://i.scdn.co/image/ab67616d0000b273b42903524b8159a6747ef161'},
+  { id: 'unholy', title: 'Unholy', artist: 'Sam Smith & Kim Petras', genre: 'pop', duration: '2:36', plays: '1.4B', art: 'https://i.scdn.co/image/ab67616d0000b2739343510e40285a8647c2966e' },
+  { id: 'dynamite', title: 'Dynamite', artist: 'BTS', genre: 'kpop', duration: '3:19', plays: '1.7B', art: 'https://i.scdn.co/image/ab67616d0000b273764539659345c2692237894d' },
+  { id: 'god-did', title: 'God Did', artist: 'DJ Khaled ft. Drake', genre: 'hiphop', duration: '5:07', plays: '1.8B', art: 'https://i.scdn.co/image/ab67616d0000b273449339798544257121287c94' },
+  { id: 'golden-hour', title: 'Golden Hour', artist: 'JVKE', genre: 'rb', duration: '3:29', plays: '980M', art: 'https://i.scdn.co/image/ab67616d0000b273970477142436f5610842e23d' },
   { id: 'anti-hero', title: 'Anti-Hero', artist: 'Taylor Swift', genre: 'pop', duration: '3:20', plays: '1.2B', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3' },
-  { id: 'flowers', title: 'Flowers', artist: 'Miley Cyrus', genre: 'pop', duration: '3:20', plays: '1.5B', art: 'linear-gradient(135deg, #705000, #302000)' },
-  { id: 'creepin', title: 'Creepin\'', artist: 'Metro Boomin', genre: 'hiphop', duration: '3:41', plays: '800M', art: 'linear-gradient(135deg, #101010, #303030)' },
-  { id: 'die-for-you', title: 'Die For You', artist: 'The Weeknd & Ariana Grande', genre: 'rb', duration: '3:52', plays: '1.1B', art: 'linear-gradient(135deg, #400010, #800020)' },
-  { id: 'rich-flex', title: 'Rich Flex', artist: 'Drake & 21 Savage', genre: 'hiphop', duration: '3:59', plays: '900M', art: 'linear-gradient(135deg, #000000, #202020)' },
-  { id: 'cuff-it', title: 'Cuff It', artist: 'Beyoncé', genre: 'rb', duration: '3:45', plays: '700M', art: 'linear-gradient(135deg, #604000, #907000)' },
-  { id: 'kill-bill', title: 'Kill Bill', artist: 'SZA', genre: 'rb', duration: '2:33', plays: '1.3B', art: 'linear-gradient(135deg, #003020, #005030)' },
-  { id: 'calm-down', title: 'Calm Down', artist: 'Rema & Selena Gomez', genre: 'pop', duration: '3:59', plays: '1.2B', art: 'linear-gradient(135deg, #806000, #504000)' },
-  { id: 'vampire', title: 'Vampire', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:39', plays: '600M', art: 'linear-gradient(135deg, #300040, #1a0020)' },
-  { id: 'cruel-summer', title: 'Cruel Summer', artist: 'Taylor Swift', genre: 'pop', duration: '2:58', plays: '1.6B', art: 'linear-gradient(135deg, #904070, #602040)' },
-  { id: 'seven', title: 'Seven', artist: 'Jung Kook ft. Latto', genre: 'kpop', duration: '3:04', plays: '900M', art: 'linear-gradient(135deg, #202040, #101030)' },
-  { id: 'paint-the-town', title: 'Paint The Town Red', artist: 'Doja Cat', genre: 'hiphop', duration: '3:51', plays: '800M', art: 'linear-gradient(135deg, #800000, #500000)' },
-  { id: 'traitor', title: 'Traitor', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:49', plays: '1.1B', art: 'linear-gradient(135deg, #200030, #10001a)' },
-  { id: 'starboy', title: 'Starboy', artist: 'The Weeknd', genre: 'electronic', duration: '3:50', plays: '2.4B', art: 'linear-gradient(135deg, #101010, #000000)' },
+  { id: 'flowers', title: 'Flowers', artist: 'Miley Cyrus', genre: 'pop', duration: '3:20', plays: '1.5B', art: 'https://i.scdn.co/image/ab67616d0000b273f421f4575971ef0841584c6c' },
+  { id: 'creepin', title: 'Creepin\'', artist: 'Metro Boomin', genre: 'hiphop', duration: '3:41', plays: '800M', art: 'https://i.scdn.co/image/ab67616d0000b273926f4362d1373fc34ea40d04' },
+  { id: 'die-for-you', title: 'Die For You', artist: 'The Weeknd & Ariana Grande', genre: 'rb', duration: '3:52', plays: '1.1B', art: 'https://i.scdn.co/image/ab67616d0000b27388a3db4441094380b06b251d' },
+  { id: 'rich-flex', title: 'Rich Flex', artist: 'Drake & 21 Savage', genre: 'hiphop', duration: '3:59', plays: '900M', art: 'https://i.scdn.co/image/ab67616d0000b273cd94d2d2d86cae4a4d71d03e' },
+  { id: 'cuff-it', title: 'Cuff It', artist: 'Beyoncé', genre: 'rb', duration: '3:45', plays: '700M', art: 'https://i.scdn.co/image/ab67616d0000b273e970163351d45136ed057d39' },
+  { id: 'kill-bill', title: 'Kill Bill', artist: 'SZA', genre: 'rb', duration: '2:33', plays: '1.3B', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c' },
+  { id: 'calm-down', title: 'Calm Down', artist: 'Rema & Selena Gomez', genre: 'pop', duration: '3:59', plays: '1.2B', art: 'https://i.scdn.co/image/ab67616d0000b27386057a79e60742129759ba0e' },
+  { id: 'vampire', title: 'Vampire', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:39', plays: '600M', art: 'https://i.scdn.co/image/ab67616d0000b273e735d469f41759b3636780c3' },
+  { id: 'cruel-summer', title: 'Cruel Summer', artist: 'Taylor Swift', genre: 'pop', duration: '2:58', plays: '1.6B', art: 'https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a0962f4484' },
+  { id: 'seven', title: 'Seven', artist: 'Jung Kook ft. Latto', genre: 'kpop', duration: '3:04', plays: '900M', art: 'https://i.scdn.co/image/ab67616d0000b2739343510e40285a8647c2966e' },
+  { id: 'paint-the-town', title: 'Paint The Town Red', artist: 'Doja Cat', genre: 'hiphop', duration: '3:51', plays: '800M', art: 'https://i.scdn.co/image/ab67616d0000b273e66014e760ef164c98862808' },
+  { id: 'traitor', title: 'Traitor', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:49', plays: '1.1B', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562' },
+  { id: 'starboy', title: 'Starboy', artist: 'The Weeknd', genre: 'electronic', duration: '3:50', plays: '2.4B', art: 'https://i.scdn.co/image/ab67616d0000b2734718e2b124f79d100b50aa23' },
+  { id: 'espresso', title: 'Espresso', artist: 'Sabrina Carpenter', genre: 'pop', duration: '2:55', plays: '500M', art: 'https://i.scdn.co/image/ab67616d0000b273449339798544257121287c94' },
 
   // Harry's House Tracks (Hidden from main catalog)
   { id: 'sushi-restaurant', title: 'Music for a Sushi Restaurant', artist: 'Harry Styles', genre: 'pop', duration: '3:14', art: 'https://i.scdn.co/image/ab67616d0000b273b42903524b8159a6747ef161', hideFromCatalog: true },
@@ -42,37 +42,34 @@ const SONGS_DATA = [
   { id: 'boyfriends', title: 'Boyfriends', artist: 'Harry Styles', genre: 'pop', duration: '3:12', art: 'https://i.scdn.co/image/ab67616d0000b273b42903524b8159a6747ef161', hideFromCatalog: true },
   { id: 'love-of-my-life', title: 'Love of My Life', artist: 'Harry Styles', genre: 'pop', duration: '3:11', art: 'https://i.scdn.co/image/ab67616d0000b273b42903524b8159a6747ef161', hideFromCatalog: true },
 
-  // Dawn FM Tracks (Hidden)
-  { id: 'dawn-fm-track', title: 'Dawn FM', artist: 'The Weeknd', genre: 'pop', duration: '1:36', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'gasoline', title: 'Gasoline', artist: 'The Weeknd', genre: 'pop', duration: '3:32', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'how-do-i-make-love', title: 'How Do I Make You Love Me?', artist: 'The Weeknd', genre: 'pop', duration: '3:34', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'take-my-breath-full', title: 'Take My Breath', artist: 'The Weeknd', genre: 'pop', duration: '5:39', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'sacrifice', title: 'Sacrifice', artist: 'The Weeknd', genre: 'pop', duration: '3:08', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'tale-by-quincy', title: 'A Tale by Quincy', artist: 'The Weeknd', genre: 'pop', duration: '1:36', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'out-of-time', title: 'Out of Time', artist: 'The Weeknd', genre: 'pop', duration: '3:34', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'here-we-go', title: 'Here We Go... Again', artist: 'The Weeknd', genre: 'pop', duration: '3:29', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'best-friends', title: 'Best Friends', artist: 'The Weeknd', genre: 'pop', duration: '2:43', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'is-there-someone', title: 'Is There Someone Else?', artist: 'The Weeknd', genre: 'pop', duration: '3:19', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
-  { id: 'less-than-zero', title: 'Less Than Zero', artist: 'The Weeknd', genre: 'pop', duration: '3:31', art: 'https://i.scdn.co/image/ab67616d0000b2734130009581f1d17d120a32cb', hideFromCatalog: true },
+  // After Hours Tracks (Hidden)
+  { id: 'alone-again', title: 'Alone Again', artist: 'The Weeknd', genre: 'rb', duration: '3:10', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'too-late', title: 'Too Late', artist: 'The Weeknd', genre: 'rb', duration: '3:59', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'heartless', title: 'Heartless', artist: 'The Weeknd', genre: 'rb', duration: '3:18', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'faith', title: 'Faith', artist: 'The Weeknd', genre: 'rb', duration: '4:43', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'blinding-lights-album', title: 'Blinding Lights', artist: 'The Weeknd', genre: 'rb', duration: '3:20', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'in-your-eyes', title: 'In Your Eyes', artist: 'The Weeknd', genre: 'rb', duration: '3:57', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'save-your-tears-album', title: 'Save Your Tears', artist: 'The Weeknd', genre: 'rb', duration: '3:35', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
+  { id: 'after-hours-track', title: 'After Hours', artist: 'The Weeknd', genre: 'rb', duration: '6:01', art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84', hideFromCatalog: true },
 
-  // Midnights Tracks (Hidden)
-  { id: 'lavender-haze', title: 'Lavender Haze', artist: 'Taylor Swift', genre: 'pop', duration: '3:22', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'maroon', title: 'Maroon', artist: 'Taylor Swift', genre: 'pop', duration: '3:38', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'snow-on-beach', title: 'Snow on the Beach', artist: 'Taylor Swift', genre: 'pop', duration: '4:16', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'on-your-own', title: 'You\'re on Your Own, Kid', artist: 'Taylor Swift', genre: 'pop', duration: '3:14', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'midnight-rain', title: 'Midnight Rain', artist: 'Taylor Swift', genre: 'pop', duration: '3:08', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'question-mark', title: 'Question...?', artist: 'Taylor Swift', genre: 'pop', duration: '3:30', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'bejeweled', title: 'Bejeweled', artist: 'Taylor Swift', genre: 'pop', duration: '3:14', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'karma', title: 'Karma', artist: 'Taylor Swift', genre: 'pop', duration: '3:24', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
-  { id: 'mastermind', title: 'Mastermind', artist: 'Taylor Swift', genre: 'pop', duration: '3:11', art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3', hideFromCatalog: true },
+  // SOUR Tracks (Hidden)
+  { id: 'brutal', title: 'brutal', artist: 'Olivia Rodrigo', genre: 'pop', duration: '2:23', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
+  { id: 'traitor-album', title: 'traitor', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:49', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
+  { id: 'drivers-license-album', title: 'drivers license', artist: 'Olivia Rodrigo', genre: 'pop', duration: '4:02', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
+  { id: 'deja-vu', title: 'deja vu', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:35', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
+  { id: 'good-4-u-album', title: 'good 4 u', artist: 'Olivia Rodrigo', genre: 'pop', duration: '2:58', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
+  { id: 'happier', title: 'happier', artist: 'Olivia Rodrigo', genre: 'pop', duration: '2:55', art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562', hideFromCatalog: true },
 
-  // DeBÍ TiRAR MáS FOToS Tracks (Hidden)
-  { id: 'dtmf-track', title: 'DeBÍ TiRAR MáS FOToS', artist: 'Bad Bunny', genre: 'pop', duration: '3:45', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true },
-  { id: 'si-de-veras', title: 'Si De Veras Te Quisiera', artist: 'Bad Bunny', genre: 'pop', duration: '3:12', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true },
-  { id: 'y-que', title: 'Y Qué?', artist: 'Bad Bunny', genre: 'pop', duration: '2:58', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true },
-  { id: 'puerto-rico', title: 'Puerto Rico', artist: 'Bad Bunny', genre: 'pop', duration: '4:05', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true },
-  { id: 'solita-bb', title: 'Solita', artist: 'Bad Bunny', genre: 'pop', duration: '3:20', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true },
-  { id: 'manana-bb', title: 'Mañana', artist: 'Bad Bunny', genre: 'pop', duration: '3:15', art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127', hideFromCatalog: true }
+  // SOS Tracks (Hidden)
+  { id: 'sos-track', title: 'SOS', artist: 'SZA', genre: 'rb', duration: '1:57', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'kill-bill-album', title: 'Kill Bill', artist: 'SZA', genre: 'rb', duration: '2:33', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'seek-destroy', title: 'Seek & Destroy', artist: 'SZA', genre: 'rb', duration: '3:23', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'low', title: 'Low', artist: 'SZA', genre: 'rb', duration: '3:01', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'blind', title: 'Blind', artist: 'SZA', genre: 'rb', duration: '2:30', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'snooze-album', title: 'Snooze', artist: 'SZA', genre: 'rb', duration: '3:21', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'shirt-album', title: 'Shirt', artist: 'SZA', genre: 'rb', duration: '3:01', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true },
+  { id: 'i-hate-u', title: 'I Hate U', artist: 'SZA', genre: 'rb', duration: '2:54', art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c', hideFromCatalog: true }
+
 ];
 
 const ALBUMS_DATA = [
@@ -96,54 +93,54 @@ const ALBUMS_DATA = [
     ]
   },
   { 
-    id: 'dawn-fm', title: 'Dawn FM', artist: 'The Weeknd', 
-    released: '7 de janeiro de 2022', duration: '51:49', 
-    art: 'https://upload.wikimedia.org/wikipedia/en/b/b9/The_Weeknd_-_Dawn_FM.png',
+    id: 'after-hours', title: 'After Hours', artist: 'The Weeknd', 
+    released: '20 de março de 2020', duration: '60:17', 
+    art: 'https://i.scdn.co/image/ab67616d0000b273881c19d45802a46e10a26e84',
     tracks: [
-      { title: 'Dawn FM', duration: '1:36' },
-      { title: 'Gasoline', duration: '3:32' },
-      { title: 'How Do I Make You Love Me?', duration: '3:34' },
-      { title: 'Take My Breath', duration: '5:39' },
-      { title: 'Sacrifice', duration: '3:08' },
-      { title: 'A Tale by Quincy', duration: '1:36' },
-      { title: 'Out of Time', duration: '3:34' },
-      { title: 'Here We Go... Again', duration: '3:29' },
-      { title: 'Best Friends', duration: '2:43' },
-      { title: 'Is There Someone Else?', duration: '3:19' },
-      { title: 'Less Than Zero', duration: '3:31' }
+      { title: 'Alone Again', duration: '3:10' },
+      { title: 'Too Late', duration: '3:59' },
+      { title: 'Heartless', duration: '3:18' },
+      { title: 'Faith', duration: '4:43' },
+      { title: 'Blinding Lights', duration: '3:20' },
+      { title: 'In Your Eyes', duration: '3:57' },
+      { title: 'Save Your Tears', duration: '3:35' },
+      { title: 'After Hours', duration: '6:01' }
     ]
   },
   { 
-    id: 'midnights', title: 'Midnights', artist: 'Taylor Swift', 
-    released: '21 de outubro de 2022', duration: '44:02', 
-    art: 'https://i.scdn.co/image/ab67616d0000b273bb0e0863cc745b159fa21ef3',
+    id: 'sour-album', title: 'SOUR', artist: 'Olivia Rodrigo', 
+    released: '21 de maio de 2021', duration: '34:41', 
+    art: 'https://i.scdn.co/image/ab67616d0000b273a9139615731758280f7aa562',
     tracks: [
-      { title: 'Lavender Haze', duration: '3:22' },
-      { title: 'Maroon', duration: '3:38' },
-      { title: 'Anti-Hero', duration: '3:20' },
-      { title: 'Snow on the Beach', duration: '4:16' },
-      { title: 'You\'re on Your Own, Kid', duration: '3:14' },
-      { title: 'Midnight Rain', duration: '3:08' },
-      { title: 'Question...?', duration: '3:30' },
-      { title: 'Bejeweled', duration: '3:14' },
-      { title: 'Karma', duration: '3:24' },
-      { title: 'Mastermind', duration: '3:11' }
+      { title: 'brutal', duration: '2:23' },
+      { title: 'traitor', duration: '3:49' },
+      { title: 'drivers license', duration: '4:02' },
+      { title: 'deja vu', duration: '3:35' },
+      { title: 'good 4 u', duration: '2:58' },
+      { title: 'happier', duration: '2:55' }
     ]
   },
   { 
-    id: 'dtmf-album', title: 'DeBÍ TiRAR MáS FOToS', artist: 'Bad Bunny', 
-    released: '5 de janeiro de 2025', duration: '64:12', 
-    art: 'https://i.scdn.co/image/ab67616d0000b273468532442e975558908f5127',
+    id: 'sos-album', title: 'SOS', artist: 'SZA', 
+    released: '9 de dezembro de 2022', duration: '67:52', 
+    art: 'https://i.scdn.co/image/ab67616d0000b2730ca7897084534f434b9d031c',
     tracks: [
-      { title: 'DeBÍ TiRAR MáS FOToS', duration: '3:45' },
-      { title: 'Si De Veras Te Quisiera', duration: '3:12' },
-      { title: 'Y Qué?', duration: '2:58' },
-      { title: 'Puerto Rico', duration: '4:05' },
-      { title: 'Solita', duration: '3:20' },
-      { title: 'Mañana', duration: '3:15' }
+      { title: 'SOS', duration: '1:57' },
+      { title: 'Kill Bill', duration: '2:33' },
+      { title: 'Seek & Destroy', duration: '3:23' },
+      { title: 'Low', duration: '3:01' },
+      { title: 'Blind', duration: '2:30' },
+      { title: 'Snooze', duration: '3:21' },
+      { title: 'Shirt', duration: '3:01' },
+      { title: 'I Hate U', duration: '2:54' }
     ]
   }
 ];
+
+function getArtBg(art) {
+  if (art && art.startsWith('http')) return `url('${art}')`;
+  return art;
+}
 
 const FULL_LYRICS = {
   'As It Was': [
@@ -189,7 +186,7 @@ const lyricsContent = $('lyricsContent');
 
 // ── THEME ──────────────────────────────────────────
 (function initTheme() {
-  const saved = localStorage.getItem('bv-theme') || 'light';
+  const saved = localStorage.getItem('bv-theme') || 'dark';
   html.setAttribute('data-theme', saved);
 })();
 
@@ -357,6 +354,30 @@ function renderAlbums() {
       <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">${album.title}</h4>
       <p style="font-size: 14px; color: var(--txt-2);">${album.artist}</p>
     `;
+    grid.appendChild(card);
+  });
+}
+
+function renderFullCatalog() {
+  const grid = $('fullTracksGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  SONGS_DATA.forEach((song, index) => {
+    const card = document.createElement('div');
+    card.className = 'track-card';
+    card.innerHTML = `
+      <div class="track-art" style="background-image: ${getArtBg(song.art)}; background-size: cover; background-position: center; aspect-ratio: 1; border-radius: 12px; position: relative; overflow: hidden; margin-bottom: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+        <div class="track-play-btn" onclick="playSongById('${song.id}')" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); opacity: 0; transition: 0.3s; cursor: pointer;">
+          <svg width="40" height="40" viewBox="0 0 22 22" fill="none"><path d="M8 6l9 5-9 5V6z" fill="white"/></svg>
+        </div>
+      </div>
+      <div class="track-info">
+        <h4 class="track-title" style="font-size: 16px; margin-bottom: 4px;">${song.title}</h4>
+        <p class="track-artist" style="font-size: 13px; color: var(--txt-2);">${song.artist}</p>
+      </div>
+    `;
+    card.onmouseover = () => card.querySelector('.track-play-btn').style.opacity = '1';
+    card.onmouseout = () => card.querySelector('.track-play-btn').style.opacity = '0';
     grid.appendChild(card);
   });
 }
@@ -762,6 +783,7 @@ window.toggleLyrics = () => {
 // ── INITIAL LOAD ───────────────────────────────────
 window.addEventListener('load', () => {
   renderCatalog();
+  renderFullCatalog();
   renderAlbums();
   renderUserPlaylists();
   syncLikedTracks();
@@ -879,4 +901,60 @@ function triggerAOS() {
 window.addEventListener('scroll', triggerAOS);
 window.addEventListener('load', triggerAOS);
 setTimeout(triggerAOS, 200);
+
+// ── CONTACT FORM LOGIC ─────────────────────────────
+(function initContactForm() {
+  const form = $('contatoForm');
+  const phoneInput = $('ctPhone');
+  
+  const emailBtn = $('emailChannelBtn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = 'beearochaconceicao@gmail.com';
+      
+      // Abre o Gmail diretamente no navegador
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`, '_blank');
+      
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Abrindo Gmail e copiando endereço...');
+      });
+    });
+  }
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+      if (!x) return;
+      e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+  }
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = $('ctName').value;
+      const email = $('ctEmail').value;
+      const phone = $('ctPhone').value;
+      const msg = $('ctMsg').value;
+      
+      if (!name || !email || !phone || !msg) {
+        showToast('Por favor, preencha todos os campos.');
+        return;
+      }
+      
+      const recipient = 'beearochaconceicao@gmail.com';
+      const subject = `Contato BeatVibes - ${name}`;
+      // Usando %0A para quebras de linha no Gmail
+      const body = `Nome: ${name}%0AEmail: ${email}%0ATelefone: ${phone}%0A%0AMensagem:%0A${msg}`;
+      
+      // Abre o Gmail com os dados preenchidos
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`, '_blank');
+      
+      showToast('mensagem enviada com sucesso');
+      form.reset();
+    });
+  }
+})();
 
