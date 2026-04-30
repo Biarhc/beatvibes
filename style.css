@@ -704,8 +704,35 @@ button { cursor: pointer; font-family: inherit; }
   display: flex; align-items: center; gap: 14px;
   min-width: 280px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--border);
-  animation: slideInRight 0.6s 1s ease both;
-  transition: transform var(--trans), box-shadow var(--trans);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateX(50px) scale(0.9);
+  pointer-events: none;
+}
+.floating-player.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+.fp-close {
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 28px; height: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--txt-2);
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--trans);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.fp-close:hover {
+  background: var(--crimson);
+  color: #fff;
+  border-color: var(--crimson);
+  transform: scale(1.1);
 }
 .floating-player:hover {
   box-shadow: 0 16px 60px rgba(0,0,0,0.5), 0 0 30px var(--crimson-glow);
@@ -1061,33 +1088,33 @@ button { cursor: pointer; font-family: inherit; }
   transform: translateY(-8px);
 }
 
-/* Rainbow Track Cards - Per Row (Groups of 4) */
+/* Rainbow Track Cards - Per Row (Groups of 4, Loops every 8 rows/32 songs) */
 /* Row 1: Red */
-.tracks-grid .track-card:nth-child(-n+4) { background: rgba(255, 65, 54, 0.15); border-color: rgba(255, 65, 54, 0.3); }
+.tracks-grid .track-card:nth-child(32n+1), .tracks-grid .track-card:nth-child(32n+2), .tracks-grid .track-card:nth-child(32n+3), .tracks-grid .track-card:nth-child(32n+4) { background: rgba(255, 65, 54, 0.15); border-color: rgba(255, 65, 54, 0.3); }
 /* Row 2: Orange */
-.tracks-grid .track-card:nth-child(n+5):nth-child(-n+8) { background: rgba(255, 133, 27, 0.15); border-color: rgba(255, 133, 27, 0.3); }
+.tracks-grid .track-card:nth-child(32n+5), .tracks-grid .track-card:nth-child(32n+6), .tracks-grid .track-card:nth-child(32n+7), .tracks-grid .track-card:nth-child(32n+8) { background: rgba(255, 133, 27, 0.15); border-color: rgba(255, 133, 27, 0.3); }
 /* Row 3: Yellow */
-.tracks-grid .track-card:nth-child(n+9):nth-child(-n+12) { background: rgba(255, 220, 0, 0.15); border-color: rgba(255, 220, 0, 0.3); }
+.tracks-grid .track-card:nth-child(32n+9), .tracks-grid .track-card:nth-child(32n+10), .tracks-grid .track-card:nth-child(32n+11), .tracks-grid .track-card:nth-child(32n+12) { background: rgba(255, 220, 0, 0.15); border-color: rgba(255, 220, 0, 0.3); }
 /* Row 4: Green */
-.tracks-grid .track-card:nth-child(n+13):nth-child(-n+16) { background: rgba(46, 204, 64, 0.15); border-color: rgba(46, 204, 64, 0.3); }
+.tracks-grid .track-card:nth-child(32n+13), .tracks-grid .track-card:nth-child(32n+14), .tracks-grid .track-card:nth-child(32n+15), .tracks-grid .track-card:nth-child(32n+16) { background: rgba(46, 204, 64, 0.15); border-color: rgba(46, 204, 64, 0.3); }
 /* Row 5: Blue */
-.tracks-grid .track-card:nth-child(n+17):nth-child(-n+20) { background: rgba(0, 116, 217, 0.15); border-color: rgba(0, 116, 217, 0.3); }
+.tracks-grid .track-card:nth-child(32n+17), .tracks-grid .track-card:nth-child(32n+18), .tracks-grid .track-card:nth-child(32n+19), .tracks-grid .track-card:nth-child(32n+20) { background: rgba(0, 116, 217, 0.15); border-color: rgba(0, 116, 217, 0.3); }
 /* Row 6: Purple */
-.tracks-grid .track-card:nth-child(n+21):nth-child(-n+24) { background: rgba(177, 13, 201, 0.15); border-color: rgba(177, 13, 201, 0.3); }
+.tracks-grid .track-card:nth-child(32n+21), .tracks-grid .track-card:nth-child(32n+22), .tracks-grid .track-card:nth-child(32n+23), .tracks-grid .track-card:nth-child(32n+24) { background: rgba(177, 13, 201, 0.15); border-color: rgba(177, 13, 201, 0.3); }
 /* Row 7: Pink */
-.tracks-grid .track-card:nth-child(n+25):nth-child(-n+28) { background: rgba(240, 18, 190, 0.15); border-color: rgba(240, 18, 190, 0.3); }
-/* Row 8+: Black/Dark */
-.tracks-grid .track-card:nth-child(n+29) { background: rgba(17, 17, 17, 0.6); border-color: rgba(255, 255, 255, 0.1); }
+.tracks-grid .track-card:nth-child(32n+25), .tracks-grid .track-card:nth-child(32n+26), .tracks-grid .track-card:nth-child(32n+27), .tracks-grid .track-card:nth-child(32n+28) { background: rgba(240, 18, 190, 0.15); border-color: rgba(240, 18, 190, 0.3); }
+/* Row 8: Black/Dark */
+.tracks-grid .track-card:nth-child(32n+29), .tracks-grid .track-card:nth-child(32n+30), .tracks-grid .track-card:nth-child(32n+31), .tracks-grid .track-card:nth-child(32n+32) { background: rgba(17, 17, 17, 0.6); border-color: rgba(255, 255, 255, 0.1); }
 
-/* Hover states for rainbow */
-.tracks-grid .track-card:nth-child(-n+4):hover { background: rgba(255, 65, 54, 0.25); }
-.tracks-grid .track-card:nth-child(n+5):nth-child(-n+8):hover { background: rgba(255, 133, 27, 0.25); }
-.tracks-grid .track-card:nth-child(n+9):nth-child(-n+12):hover { background: rgba(255, 220, 0, 0.25); }
-.tracks-grid .track-card:nth-child(n+13):nth-child(-n+16):hover { background: rgba(46, 204, 64, 0.25); }
-.tracks-grid .track-card:nth-child(n+17):nth-child(-n+20):hover { background: rgba(0, 116, 217, 0.25); }
-.tracks-grid .track-card:nth-child(n+21):nth-child(-n+24):hover { background: rgba(177, 13, 201, 0.25); }
-.tracks-grid .track-card:nth-child(n+25):nth-child(-n+28):hover { background: rgba(240, 18, 190, 0.25); }
-.tracks-grid .track-card:nth-child(n+29):hover { background: rgba(17, 17, 17, 0.8); }
+/* Hovers */
+.tracks-grid .track-card:nth-child(32n+1):hover, .tracks-grid .track-card:nth-child(32n+2):hover, .tracks-grid .track-card:nth-child(32n+3):hover, .tracks-grid .track-card:nth-child(32n+4):hover { background: rgba(255, 65, 54, 0.25); }
+.tracks-grid .track-card:nth-child(32n+5):hover, .tracks-grid .track-card:nth-child(32n+6):hover, .tracks-grid .track-card:nth-child(32n+7):hover, .tracks-grid .track-card:nth-child(32n+8):hover { background: rgba(255, 133, 27, 0.25); }
+.tracks-grid .track-card:nth-child(32n+9):hover, .tracks-grid .track-card:nth-child(32n+10):hover, .tracks-grid .track-card:nth-child(32n+11):hover, .tracks-grid .track-card:nth-child(32n+12):hover { background: rgba(255, 220, 0, 0.25); }
+.tracks-grid .track-card:nth-child(32n+13):hover, .tracks-grid .track-card:nth-child(32n+14):hover, .tracks-grid .track-card:nth-child(32n+15):hover, .tracks-grid .track-card:nth-child(32n+16):hover { background: rgba(46, 204, 64, 0.25); }
+.tracks-grid .track-card:nth-child(32n+17):hover, .tracks-grid .track-card:nth-child(32n+18):hover, .tracks-grid .track-card:nth-child(32n+19):hover, .tracks-grid .track-card:nth-child(32n+20):hover { background: rgba(0, 116, 217, 0.25); }
+.tracks-grid .track-card:nth-child(32n+21):hover, .tracks-grid .track-card:nth-child(32n+22):hover, .tracks-grid .track-card:nth-child(32n+23):hover, .tracks-grid .track-card:nth-child(32n+24):hover { background: rgba(177, 13, 201, 0.25); }
+.tracks-grid .track-card:nth-child(32n+25):hover, .tracks-grid .track-card:nth-child(32n+26):hover, .tracks-grid .track-card:nth-child(32n+27):hover, .tracks-grid .track-card:nth-child(32n+28):hover { background: rgba(240, 18, 190, 0.25); }
+.tracks-grid .track-card:nth-child(32n+29):hover, .tracks-grid .track-card:nth-child(32n+30):hover, .tracks-grid .track-card:nth-child(32n+31):hover, .tracks-grid .track-card:nth-child(32n+32):hover { background: rgba(17, 17, 17, 0.8); }
 
 .track-card.hidden {
   display: none;

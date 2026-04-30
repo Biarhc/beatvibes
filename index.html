@@ -286,7 +286,10 @@
   <!-- ══════════════════════════════════════ -->
   <!--  NOW PLAYING CARD (FLOATING)           -->
   <!-- ══════════════════════════════════════ -->
-  <div class="floating-player" id="floatingPlayer" data-aos="fade-left">
+  <div class="floating-player" id="floatingPlayer">
+    <button class="fp-close" id="fpClose" aria-label="Fechar Player">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
     <div class="fp-glow"></div>
     <div class="fp-art">
       <div class="fp-vinyl">
@@ -509,6 +512,22 @@
   </section>
 
   <!-- ══════════════════════════════════════ -->
+  <!--  ÁLBUNS / ALBUMS                       -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="albums" id="albums" style="padding: 100px 0; background: var(--bg-2); border-top: 1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">Destaques</div>
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Álbuns que você<br /><span class="gradient-text">precisa ouvir</span>
+      </h2>
+
+      <div class="albums-grid" id="albumsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; margin-top: 50px;">
+        <!-- Dynamic content from app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
   <!--  SOBRE / ABOUT                         -->
   <!-- ══════════════════════════════════════ -->
   <section class="sobre" id="sobre">
@@ -593,22 +612,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════ -->
-  <!--  ÁLBUNS / ALBUMS                       -->
-  <!-- ══════════════════════════════════════ -->
-  <section class="albums" id="albums" style="padding: 100px 0; background: var(--bg-2); border-top: 1px solid var(--border-soft);">
-    <div class="container">
-      <div class="section-tag" data-aos="fade-up">Destaques</div>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-        Álbuns que você<br /><span class="gradient-text">precisa ouvir</span>
-      </h2>
-
-      <div class="albums-grid" id="albumsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 32px; margin-top: 50px;">
-        <!-- Dynamic content from app.js -->
       </div>
     </div>
   </section>
