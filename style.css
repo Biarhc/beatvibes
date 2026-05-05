@@ -1220,7 +1220,6 @@ button { cursor: pointer; font-family: inherit; }
 .track-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
 .track-artist { font-size: 12px; color: var(--txt-2); margin-bottom: 10px; }
 .track-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--txt-3); }
-.track-duration {}
 .track-plays { color: var(--txt-3); }
 
 .track-fav {
@@ -1917,30 +1916,12 @@ button { cursor: pointer; font-family: inherit; }
   .hero-slide { gap: 20px !important; }
   
   .hero-nav { 
-    position: fixed !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    padding: 0 10px !important;
-    z-index: 100 !important;
-    pointer-events: none !important;
+    display: none !important; /* Remove arrows on mobile */
   }
-  .hero-nav button { 
-    pointer-events: auto !important;
-    color: var(--crimson) !important; 
-    font-size: 36px !important;
-    width: auto !important;
-    height: auto !important;
-    background: none !important;
-  }
-  .hero-nav.prev { left: 0 !important; position: absolute !important; }
-  .hero-nav.next { right: 0 !important; position: absolute !important; }
 
-  .hero-dots { display: flex !important; bottom: 25px !important; gap: 8px !important; }
-  .h-dot { width: 8px !important; height: 6px !important; border-radius: 99px !important; background: rgba(255,255,255,0.2) !important; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; }
-  .h-dot.active { width: 30px !important; background: var(--crimson) !important; box-shadow: 0 0 15px var(--crimson) !important; }
+  .hero-dots { display: flex !important; bottom: 20px !important; gap: 6px !important; }
+  .h-dot { width: 6px !important; height: 6px !important; border-radius: 50% !important; background: rgba(255,255,255,0.3) !important; }
+  .h-dot.active { width: 20px !important; border-radius: 10px !important; background: var(--crimson) !important; }
 
   .hero-actions-container { 
     width: 100% !important; 
@@ -1969,18 +1950,49 @@ button { cursor: pointer; font-family: inherit; }
   
   .scroll-hint, .hero-stats, .hero-badge, .scroll-indicator { display: none !important; visibility: hidden !important; }
 
-  .daily-mix-highlight { padding: 20px !important; margin: 0 auto !important; max-width: 320px !important; }
+  .daily-mix-highlight { padding: 28px !important; margin: 0 auto !important; max-width: 380px !important; }
   .dm-stats { grid-template-columns: 1fr 1fr 1fr !important; gap: 10px !important; }
-  .dm-art { width: 80px !important; height: 80px !important; }
-  .dm-info h3 { font-size: 18px !important; }
+  .dm-art { width: 150px !important; height: 150px !important; border-radius: 20px !important; }
+  .dm-info h3 { font-size: 22px !important; }
+  .dm-info p { font-size: 13px !important; }
+  .dm-content { gap: 20px !important; }
+  .dm-info { padding-left: 4px !important; }
   
-  .dep-track { display: flex !important; flex-direction: column !important; gap: 20px !important; }
-  .dep-card { width: 100% !important; padding: 0 !important; }
-  .dep-card-inner { padding: 30px !important; min-height: auto !important; }
-  .dep-text { font-size: 15px !important; }
-  .dep-controls { margin-top: 20px !important; }
-  .dep-arrow { width: 50px !important; height: 50px !important; }
-  .dep-stars { font-size: 20px !important; margin-bottom: 12px !important; text-align: center; }
+  /* Depoimentos: manter setas como no desktop */
+  .dep-track-wrap { 
+    overflow: hidden !important;
+  }
+  .dep-track { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    gap: 15px !important;
+  }
+  .dep-card { 
+    width: 100% !important; 
+    padding: 0 !important; 
+    flex-shrink: 0 !important;
+  }
+  .dep-card-inner { padding: 25px !important; min-height: 280px !important; }
+  .dep-text { font-size: 14px !important; line-height: 1.5 !important; }
+  .dep-controls { display: flex !important; } /* Keep arrows on mobile */
+  .dep-arrow { width: 44px !important; height: 44px !important; }
+  .dep-stars { font-size: 16px !important; margin-bottom: 10px !important; }
+
+  .albums-grid { 
+    display: flex !important; 
+    overflow-x: auto !important; 
+    scroll-snap-type: x mandatory !important;
+    gap: 12px !important;
+    padding-bottom: 16px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .album-card { 
+    flex: 0 0 170px !important; 
+    scroll-snap-align: start !important;
+  }
+  .album-card .album-art {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35) !important;
+  }
   
   .floating-player { bottom: 0 !important; z-index: 2000 !important; }
 
@@ -1996,16 +2008,19 @@ button { cursor: pointer; font-family: inherit; }
     justify-content: center !important;
     min-height: 240px !important;
   }
-  .feature-card h3 { font-size: 20px !important; margin-bottom: 10px; line-height: 1.1; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; }
-  .feature-card p { font-size: 14px !important; line-height: 1.4; opacity: 0.85; margin-bottom: 15px; max-width: 95%; }
+  .feature-card h3 { font-size: 18px !important; margin-bottom: 8px; line-height: 1.2; font-weight: 800; text-transform: uppercase; }
+  .feature-card p { font-size: 13px !important; line-height: 1.5; opacity: 0.9; margin-bottom: 10px; }
   .feature-icon { width: 64px; height: 64px; margin-bottom: 18px; background: var(--bg-3) !important; border-radius: 20px; display: flex !important; align-items: center !important; justify-content: center !important; }
   .feature-icon svg { width: 36px; height: 36px; }
   .feature-badge { font-size: 11px !important; padding: 5px 14px !important; margin-top: auto; border-radius: 99px !important; }
   .feature-card--large { grid-column: span 1 !important; }
   
-  .tracks-grid { grid-template-columns: repeat(2, 1fr); }
-  
-  .dep-card { width: 100% !important; }
+  .tracks-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
+  .track-art { height: 140px !important; }
+  .track-info { padding: 10px 12px !important; }
+  .track-title { font-size: 13px !important; }
+  .track-artist { font-size: 11px !important; margin-bottom: 6px !important; }
+  .track-meta { font-size: 10px !important; }
   
   .floating-player { 
     left: 10px; right: 10px; width: auto; 
@@ -2030,7 +2045,13 @@ button { cursor: pointer; font-family: inherit; }
   .hero-stats { display: none; }
   .hero-actions { flex-direction: column; }
   .btn-ghost, .btn-primary { width: 100%; justify-content: center; }
-  .tracks-grid { grid-template-columns: 1fr; }
+  .tracks-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .track-art { height: 120px !important; }
+  .track-info { padding: 8px 10px !important; }
+  .track-title { font-size: 12px !important; }
+  .track-artist { font-size: 10px !important; margin-bottom: 4px !important; }
+  .track-meta { font-size: 9px !important; }
+  .track-play-btn svg { width: 40px !important; height: 40px !important; padding: 8px !important; }
   .hero-badge { font-size: 11px; padding: 6px 14px; }
   .contato-form-wrap { padding: 24px; }
 }
@@ -2460,8 +2481,11 @@ button { cursor: pointer; font-family: inherit; }
 .album-card:hover {
   transform: translateY(-10px) scale(1.02);
 }
+.album-card .album-art {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 -4px 15px rgba(0,0,0,0.1), 4px 0 15px rgba(0,0,0,0.1), -4px 0 15px rgba(0,0,0,0.1) !important;
+}
 .album-card:hover .album-art {
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px var(--crimson-soft);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 -8px 25px rgba(0,0,0,0.15), 8px 0 25px rgba(0,0,0,0.15), -8px 0 25px rgba(0,0,0,0.15), 0 0 30px var(--crimson-soft) !important;
 }
 
 .album-detail-view {

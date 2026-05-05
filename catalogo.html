@@ -36,7 +36,7 @@
     <h1 class="section-title">Nosso Catálogo <br><span class="gradient-text">Completo</span></h1>
     <p class="section-desc" style="margin-bottom: 50px;">Todas as faixas disponíveis no BeatVibes, incluindo álbuns e lançamentos exclusivos.</p>
 
-    <div class="tracks-grid" id="fullTracksGrid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="tracks-grid" id="fullTracksGrid">
       <!-- Injected by app.js -->
     </div>
   </main>
@@ -52,6 +52,9 @@
 
   <!-- Floating Player -->
   <div class="floating-player" id="floatingPlayer">
+    <button class="fp-close" id="fpClose" aria-label="Fechar Player" style="position: absolute; top: -10px; right: -10px; width: 24px; height: 24px; border-radius: 50%; background: var(--crimson); border: none; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
     <div class="fp-art"><div class="fp-vinyl"><div class="fp-center"></div></div></div>
     <div class="fp-info">
       <span class="fp-title">Escolha uma música</span>

@@ -721,7 +721,7 @@ const FULL_LYRICS = {
    "Hahahahahahaha",
    "Pretty"
     ],
-   'seoul-city-jennie': [
+   'Seoul City': [
     "Ooh",
     "Ooh",
     "Ooh",
@@ -961,7 +961,7 @@ function renderCatalog(filter = 'all', targetGrid = tracksGrid) {
         </div>
         <div class="track-meta">
           <span class="track-duration">${song.duration}</span>
-          <span class="track-plays">${song.plays} plays</span>
+          <span class="track-plays">${song.plays || '10k+'} plays</span>
         </div>
       </div>
     `;
@@ -978,7 +978,7 @@ function renderAlbums() {
     card.className = 'album-card';
     card.onclick = () => openAlbumDetail(album.id);
     card.innerHTML = `
-      <div class="album-art" style="aspect-ratio: 1; background-image: ${getArtBg(album.art)}; background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.4);"></div>
+      <div class="album-art" style="aspect-ratio: 1; background-image: ${getArtBg(album.art)}; background-size: cover; background-position: center; border-radius: 16px; margin-bottom: 20px;"></div>
       <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 6px;">${album.title}</h4>
       <p style="font-size: 14px; color: var(--txt-2);">${album.artist}</p>
     `;
@@ -1119,7 +1119,7 @@ function openAlbumDetail(albumId) {
     <div class="album-detail-view" style="padding:20px; color:var(--txt);">
       <!-- Header -->
       <div class="album-detail-header" style="display:flex; gap:25px; align-items:flex-end; margin-bottom:30px; flex-wrap:wrap;">
-        <div class="album-detail-art" style="width:180px; height:180px; background: ${album.art}; border-radius:20px; box-shadow:0 25px 50px rgba(0,0,0,0.4); flex-shrink:0;"></div>
+        <div class="album-detail-art" style="width:180px; height:180px; background-image: ${getArtBg(album.art)}; background-size: cover; background-position: center; border-radius:20px; box-shadow:0 25px 50px rgba(0,0,0,0.4); flex-shrink:0;"></div>
         <div class="album-detail-info" style="flex:1; min-width:250px;">
           <span style="font-size:12px; color:var(--crimson-light); text-transform:uppercase; font-weight:800; letter-spacing:2px;">Álbum</span>
           <h2 style="margin:10px 0; font-size:38px; font-weight:900; color:var(--txt); line-height:1;">${album.title}</h2>
