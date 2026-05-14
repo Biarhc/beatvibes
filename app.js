@@ -19,7 +19,7 @@ const SONGS_DATA = [
   { id: 'die-for-you', title: 'Die For You', artist: 'The Weeknd & Ariana Grande', genre: 'rb', duration: '3:52', plays: '1.1B', art: 'assets/starboy.png' },
   { id: 'feel-it', title: 'Feel It', artist: 'd4vd', genre: 'pop', duration: '2:35', plays: '150M', art: 'assets/feel_it.png' },
   { id: 'cuff-it', title: 'Cuff It', artist: 'Beyoncé', genre: 'rb', duration: '3:45', plays: '700M', art: 'assets/cuff_it.png' },
-  { id: 'kill-bill', title: 'Kill Bill', artist: 'SZA', genre: 'rb', duration: '2:33', plays: '1.3B', art: 'assets/creepin.jpg' },
+  { id: 'kill-bill', title: 'Kill Bill', artist: 'SZA', genre: 'rb', duration: '2:33', plays: '1.3B', art: 'assets/sos.jpg' },
   { id: 'calm-down', title: 'Calm Down', artist: 'Rema & Selena Gomez', genre: 'pop', duration: '3:59', plays: '1.2B', art: 'assets/calm_down.jpg' },
   { id: 'vampire', title: 'Vampire', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:39', plays: '600M', art: 'assets/sour.jpg' },
   { id: 'cruel-summer', title: 'Cruel Summer', artist: 'Taylor Swift', genre: 'pop', duration: '2:58', plays: '1.6B', art: 'assets/lover.png' },
