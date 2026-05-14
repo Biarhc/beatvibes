@@ -189,7 +189,7 @@ const ALBUMS_DATA = [
   {
     id: 'scarlet-album', title: 'Scarlet', artist: 'Doja Cat',
     released: '22 de setembro de 2023', duration: '56:45',
-    art: 'assets/scarlet.png',
+    art: 'assets/paint.png',
     tracks: [{ title: 'Paint The Town Red', duration: '3:51' }]
   },
   {
