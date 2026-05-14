@@ -1920,18 +1920,26 @@ function closeAuthModal() {
 }
 
 function toggleModalAuth() {
-  const login = $('modalLoginView');
-  const signup = $('modalSignupView');
-  if (login && signup) {
-    if (login.style.display === 'none') {
-      login.style.display = 'block';
-      signup.style.display = 'none';
-    } else {
-      login.style.display = 'none';
-      signup.style.display = 'block';
-    }
+  const card = $('authCard');
+  if (card) {
+    card.classList.toggle('right-panel-active');
   }
 }
+
+window.handleSocialLogin = (provider) => {
+  showToast(`Conectando ao ${provider}...`);
+  // Simulação de abertura de login social
+  const urls = {
+    google: 'https://accounts.google.com/o/oauth2/v2/auth',
+    apple: 'https://appleid.apple.com/auth/authorize',
+    facebook: 'https://www.facebook.com/v19.0/dialog/oauth'
+  };
+  if (urls[provider]) {
+    setTimeout(() => {
+      window.open(urls[provider], '_blank');
+    }, 500);
+  }
+};
 
 function handleModalAuth(type) {
   let nameInput, emailInput;
