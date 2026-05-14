@@ -24,7 +24,7 @@ const SONGS_DATA = [
   { id: 'vampire', title: 'Vampire', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:39', plays: '600M', art: 'assets/sour.jpg' },
   { id: 'cruel-summer', title: 'Cruel Summer', artist: 'Taylor Swift', genre: 'pop', duration: '2:58', plays: '1.6B', art: 'assets/lover.png' },
   { id: 'seven', title: 'Seven', artist: 'Jung Kook ft. Latto', genre: 'kpop', duration: '3:04', plays: '900M', art: 'assets/golden.png' },
-  { id: 'paint-the-town', title: 'Paint The Town Red', artist: 'Doja Cat', genre: 'hiphop', duration: '3:51', plays: '800M', art: 'assets/paint.png' },
+  { id: 'paint-the-town', title: 'Paint The Town Red', artist: 'Doja Cat', genre: 'hiphop', duration: '3:51', plays: '800M', art: 'assets/paint_town.png' },
   { id: 'traitor', title: 'Traitor', artist: 'Olivia Rodrigo', genre: 'pop', duration: '3:49', plays: '1.1B', art: 'assets/sour.jpg' },
   { id: 'pink-wte', title: 'pink', artist: 'wave to earth', genre: 'rb', duration: '3:30', plays: '80M', art: 'assets/flaws.png' },
   { id: 'espresso', title: 'Espresso', artist: 'Sabrina Carpenter', genre: 'pop', duration: '2:55', plays: '500M', art: 'assets/espresso.png' },
@@ -189,7 +189,7 @@ const ALBUMS_DATA = [
   {
     id: 'scarlet-album', title: 'Scarlet', artist: 'Doja Cat',
     released: '22 de setembro de 2023', duration: '56:45',
-    art: 'assets/paint.png',
+    art: 'assets/paint_town.png',
     tracks: [{ title: 'Paint The Town Red', duration: '3:51' }]
   },
   {
